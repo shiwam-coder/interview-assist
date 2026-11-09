@@ -14,8 +14,9 @@
       {
         "title": "interview-assist-desktop",
         "width": 1440,
-        "height": 700,
-        "minWidth": 1024
+        "height": 720,
+        "minWidth": 1120,
+        "minHeight": 600
       }
     ],
     "security": {

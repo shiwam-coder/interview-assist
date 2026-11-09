@@ -1,7 +1,8 @@
 import { memo, useState, useEffect, useRef } from 'react';
 import TranscriptCard, { TranscriptCardProps } from './TranscriptCard';
 import QuestionCard from './QuestionCard';
-import sent from "../../public/sent.svg"
+import sent from "../../public/sent.svg";
+
 export interface QuestionItem {
   id: string | number;
   text: string;
@@ -244,7 +245,7 @@ const Transcript = ({
         className="min-h-0 shrink-0 flex flex-col overflow-hidden"
       >
         {/* Header */}
-        <div ref={headerRef} className="px-4 py-3 flex items-center justify-between border-b border-[#E1E4EA] shrink-0">
+        <div ref={headerRef} className="px-3.5 xl:px-4 py-2.5 xl:py-3 flex items-center justify-between border-b border-[#E1E4EA] shrink-0">
           <span className="text-[14px] font-medium text-[#4B5563]">
             Transcript ({transcripts.length})
           </span>
@@ -267,7 +268,7 @@ const Transcript = ({
         </div>
 
         {/* Message Cards */}
-        <div className="p-3.5 flex-1 min-h-0 overflow-y-auto scrollbar-thin flex flex-col gap-2.5">
+        <div className="p-3 xl:p-4 flex-1 min-h-0 overflow-y-auto scrollbar-thin flex flex-col gap-2.5">
           {transcripts.map((item, idx) => (
             <div key={idx} ref={idx === 0 ? firstCardRef : undefined}>
               <TranscriptCard
@@ -299,21 +300,21 @@ const Transcript = ({
       {/* --- Bottom Section: Question Bank --- */}
       <div className="flex-1 min-h-0 flex flex-col overflow-hidden">
         {/* Question Bank Header */}
-        <div className="px-4 pt-3.5 pb-2 flex items-center justify-between shrink-0">
-          <h3 className="text-[15px] font-semibold text-[#18181B]">
+        <div className="px-3.5 xl:px-4 pt-3 xl:pt-3.5 pb-2 flex items-center justify-between gap-1.5 shrink-0">
+          <h3 className="text-[14px] xl:text-[15px] font-semibold text-[#18181B] shrink-0">
             Question Bank
           </h3>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1.5 xl:gap-2 shrink-0">
             <button
               type="button"
-              className="px-3 py-1 text-[12px] font-medium text-[#374151] bg-white border border-[#E1E4EA] rounded-md hover:bg-gray-50 transition-colors cursor-pointer select-none"
+              className="px-2.5 xl:px-3 py-1 text-[11px] xl:text-[12px] font-medium text-[#374151] bg-white border border-[#E1E4EA] rounded-md hover:bg-gray-50 transition-colors cursor-pointer select-none whitespace-nowrap"
             >
               Analyze Now
             </button>
             <button
               type="button"
               onClick={handleGenerateMore}
-              className="px-3 py-1 text-[12px] font-medium text-[#2563EB] bg-[#EFF6FF] border border-[#BFDBFE] rounded-md hover:bg-[#DBEAFE] transition-colors cursor-pointer select-none"
+              className="px-2.5 xl:px-3 py-1 text-[11px] xl:text-[12px] font-medium text-[#2563EB] bg-[#EFF6FF] border border-[#BFDBFE] rounded-md hover:bg-[#DBEAFE] transition-colors cursor-pointer select-none whitespace-nowrap"
             >
               Generate more
             </button>
@@ -321,7 +322,7 @@ const Transcript = ({
         </div>
 
         {/* Scrollable Questions List (thin, barely noticeable scrollbar) */}
-        <div className="px-3.5 py-1.5 flex-1 min-h-0 overflow-y-auto scrollbar-thin flex flex-col gap-2.5 pr-1.5">
+        <div className="px-3 xl:px-4 py-1.5 mb-2 flex-1 min-h-0 overflow-y-auto scrollbar-thin flex flex-col gap-2.5 pr-1.5">
           {questions.map((q, idx) => (
             <QuestionCard
               key={q.id}
@@ -334,22 +335,22 @@ const Transcript = ({
         </div>
 
         {/* Bottom AI Custom Question Input */}
-        <div className="p-3.5 pt-2 shrink-0">
+        <div className="p-3 xl:p-4 pt-2 shrink-0">
           <form
             onSubmit={handleAddCustomQuestion}
-            className="flex items-center gap-2 p-y-2.5 p-x-4 rounded-[8px] border border-[rgba(51,136,255,0.10)] bg-white shadow-[inset_0_0_12px_-2px_rgba(109,170,255,0.90)] rounded-xl px-3 py-2 bg-white focus-within:ring-2 focus-within:ring-blue-100 focus:outline:0  focus-within:ring-0 focus-within:ring-transparent transition-all"
+            className="flex items-center gap-2 rounded-xl border border-[rgba(51,136,255,0.10)] bg-white shadow-[inset_0_0_12px_-2px_rgba(109,170,255,0.90)] px-3 py-2 focus-within:ring-2 focus-within:ring-blue-100 focus:outline-0 transition-all"
           >
             <input
               type="text"
               value={customTopic}
               onChange={(e) => setCustomTopic(e.target.value)}
               placeholder="Ask AI for a custom question topic..."
-              className="flex-1 text-[13px] text-[#1F2937] focus:outline:0 focus-within:ring-0 focus-within:ring-blue-000  placeholder:text-[#9CA3AF] placeholder:text-[14px] placeholder:font-[500] bg-transparent outline-none border-none p-0 focus:ring-0"
+              className="flex-1 min-w-0 text-[13px] text-[#1F2937] placeholder:text-[#9CA3AF] placeholder:text-[13px] xl:placeholder:text-[14px] placeholder:font-[500] bg-transparent outline-none border-none p-0 focus:ring-0"
             />
             <button
               type="submit"
               disabled={!customTopic.trim()}
-              className="w-8 h-8 rounded-lg rounded-[8px] rounded-lg bg-[radial-gradient(66.33%_100%_at_50%_100%,#6DAAFF_0%,#38F_100%)] shadow-[0_1.651px_3.303px_0_rgba(198,198,198,0.15),inset_0_-1.651px_1.651px_0_#93C0FF] hover:bg-[#1D4ED8] disabled:opacity-50 disabled:hover:bg-[#2563EB] flex items-center justify-center text-white shrink-0 cursor-pointer transition-colors"
+              className="w-8 h-8 rounded-lg bg-[radial-gradient(66.33%_100%_at_50%_100%,#6DAAFF_0%,#38F_100%)] shadow-[0_1.651px_3.303px_0_rgba(198,198,198,0.15),inset_0_-1.651px_1.651px_0_#93C0FF] hover:bg-[#1D4ED8] disabled:opacity-50 disabled:hover:bg-[#2563EB] flex items-center justify-center text-white shrink-0 cursor-pointer transition-colors"
               title="Send custom question topic"
               aria-label="Send custom question topic"
             >

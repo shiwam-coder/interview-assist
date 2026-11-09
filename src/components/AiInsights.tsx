@@ -42,17 +42,17 @@ const AiInsights = ({ onUseQuestion, className = '' }: AiInsightsProps) => {
       className={`w-full h-full rounded-lg border bg-[#FFFFFF] border-[#E1E4EA] overflow-hidden flex flex-col ${className}`}
     >
       {/* --- Top Section: AI Insights --- */}
-      <div className="flex-[0.8] min-h-0 flex flex-col">
+      <div className="flex-1 min-h-0 flex flex-col">
         {/* Header */}
-        <div className="px-4 py-3 flex items-center justify-between border-b border-[#E1E4EA] shrink-0">
+        <div className="px-3.5 xl:px-4 py-2.5 xl:py-3 flex items-center justify-between border-b border-[#E1E4EA] shrink-0">
           <span className="text-[14px] font-medium text-[#5C5C5C]">
             AI Insights
           </span>
         </div>
 
         {/* Content */}
-        <div className="p-3.5 flex-1 min-h-0 overflow-y-auto scrollbar-thin">
-          <div className="rounded-xl border border-[#FDE68A] bg-[#FFFDF7] p-3.5 border-l-4 border-l-[#F59E0B] shadow-xs">
+        <div className="p-3 xl:p-4 pt-3.5 mb-2 flex-1 min-h-0 overflow-y-auto scrollbar-thin">
+          <div className="rounded-xl border border-[#FDE68A] bg-[#FFFDF7] p-3.5 border-l-2 border-l-[#F59E0B] shadow-xs">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-1.5 text-[14px] font-semibold text-[#D97706]">
                 {/* Lightbulb Icon */}
@@ -115,26 +115,26 @@ const AiInsights = ({ onUseQuestion, className = '' }: AiInsightsProps) => {
       </div>
 
       {/* --- Bottom Section: AI Interview Copilot --- */}
-      <div className="border-t border-[#E1E4EA] flex-[1.2] min-h-0 flex flex-col">
+      <div className="border-t border-[#E1E4EA] flex-1 min-h-0 flex flex-col">
         {/* Header */}
-        <div className="px-4 py-3 border-b border-[#E1E4EA] shrink-0">
+        <div className="px-3.5 xl:px-4 py-2.5 xl:py-3 border-b border-[#E1E4EA] shrink-0">
           <span className="text-[14px] font-medium text-[#5C5C5C]">
             AI Interview Copilot
           </span>
         </div>
 
         {/* Suggested Questions Subheader */}
-        <div className="px-4 pt-3 pb-2 flex items-center justify-between shrink-0">
-          <h3 className="text-[15px] font-semibold text-[#18181B]">
+        <div className="px-3.5 xl:px-4 pt-3 pb-2 flex items-center justify-between gap-1.5 shrink-0">
+          <h3 className="text-[14px] xl:text-[15px] font-semibold text-[#18181B] truncate">
             Suggested Questions
           </h3>
-          <span className="text-[12px] text-[#6B7280] border-b border-dotted border-[#9CA3AF] cursor-pointer select-none hover:text-[#18181B] transition-colors">
+          <span className="text-[11px] xl:text-[12px] text-[#6B7280] border-b border-dotted border-[#9CA3AF] cursor-pointer select-none hover:text-[#18181B] transition-colors whitespace-nowrap shrink-0">
             Click to use
           </span>
         </div>
 
         {/* Suggested Questions List */}
-        <div className="px-3.5 pb-3 flex-1 min-h-0 overflow-y-auto scrollbar-thin flex flex-col gap-2.5">
+        <div className="px-3 xl:px-4 mb-2 flex-1 min-h-0 overflow-y-auto scrollbar-thin flex flex-col gap-2.5">
           {questions.map((q) => (
             <div
               key={q.id}
@@ -164,4 +164,3 @@ const AiInsights = ({ onUseQuestion, className = '' }: AiInsightsProps) => {
 };
 
 export default memo(AiInsights);
-

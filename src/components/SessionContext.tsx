@@ -18,7 +18,7 @@ export const CandidateAiSummary = memo(({
   summary = "Product Designer with 3+ years of experience crafting intuitive SaaS and B2B technology products. Skilled in user research, interaction design, and turning complex workflows into simple, user-centered experiences. Collaborative and detail-oriented, balancing user needs with business goals to deliver thoughtful, scalable solutions.",
 }: CandidateAiSummaryProps) => {
   return (
-    <div className="xl:px-4 lg:px-2 pt-3.5 pb-4 flex flex-col gap-3.5">
+    <div className="p-3 xl:p-4 pt-3.5 pb-4 flex flex-col gap-3.5">
       {/* Candidate Name */}
       <div className="flex flex-col">
         <div className="flex items-center gap-1.5 text-[13px] text-[#5C5C5C] font-normal">
@@ -73,7 +73,7 @@ export const Skills = memo(({
   onClickToAsk,
 }: SkillsProps) => {
   return (
-    <div className="xl:p-4 lg:p-2 border-t border-[#E1E4EA] flex flex-col gap-2.5">
+    <div className="p-3 xl:p-4 border-t border-[#E1E4EA] flex flex-col gap-2.5">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-1.5 text-[13px] text-[#5C5C5C] font-normal">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" className="text-[#6B7280] shrink-0">
@@ -137,7 +137,7 @@ export const StrengthAndWeakness = memo(({
   recommendedFocusAreas = defaultFocusAreas,
 }: StrengthAndWeaknessProps) => {
   return (
-    <div className="xl:p-4 lg:p-2 border-t border-[#E1E4EA] flex flex-col gap-5">
+    <div className="p-3 xl:p-4 border-t border-[#E1E4EA] flex flex-col gap-5">
       {/* Strengths */}
       <div className="flex flex-col">
         <div className="flex items-center gap-2 text-[14px] font-semibold text-[#059669]">
@@ -198,7 +198,7 @@ export const StrengthAndWeakness = memo(({
 // --- Subcomponent 4: Work History ---
 export const WorkHistory = memo(() => {
   return (
-    <div className="xl:p-4 lg:p-2 border-t border-[#E1E4EA] flex flex-col gap-2">
+    <div className="p-3 xl:p-4 border-t border-[#E1E4EA] flex flex-col gap-2">
       <div className="flex items-center gap-2 text-[14px] font-semibold text-[#18181B]">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" className="text-[#6B7280] shrink-0">
           <path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z" />
@@ -250,7 +250,7 @@ export const JobDescription = memo(({
   requirements = defaultRequirements,
 }: JobDescriptionProps) => {
   return (
-    <div className="p-4 border-t border-[#E1E4EA] flex flex-col">
+    <div className="p-3 xl:p-4 border-t border-[#E1E4EA] flex flex-col">
       {/* Header */}
       <div className="flex items-center gap-1.5 text-[13px] text-[#5C5C5C] font-normal">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" className="text-[#6B7280] shrink-0">
@@ -336,9 +336,9 @@ export const QAHistory = memo(() => {
   };
 
   return (
-    <div className="p-4 border-t border-[#E1E4EA] flex flex-col gap-3">
+    <div className="p-3 xl:p-4 border-t border-[#E1E4EA] flex flex-col gap-3">
       {/* Header */}
-      <div className="flex items-center gap-1.5 text-[13px] text-[#5C5C5C] font-normal">
+      <div className="flex items-center gap-1.5 text-[13px] text-[#828282] font-[500] tracking-[-0.13px;]">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" className="text-[#6B7280] shrink-0">
           <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z" />
         </svg>
@@ -352,7 +352,7 @@ export const QAHistory = memo(() => {
           return (
             <div
               key={qa.id}
-              className="border border-[#E5E7EB] rounded-xl p-2.5 bg-white shadow-xs transition-all flex flex-col gap-2.5"
+              className="border border-[#E2E2E2] rounded-xl p-2.5 bg-white shadow-xs transition-all flex flex-col gap-2.5"
             >
               {/* Question Card Header */}
               <div
@@ -360,7 +360,7 @@ export const QAHistory = memo(() => {
                 className="flex items-center justify-between cursor-pointer select-none"
               >
                 <div className="flex items-center gap-1.5">
-                  <span className="text-[14px] font-semibold text-[#18181B]">
+                  <span className="text-[14px] font-[600] text-[#252525] tracking-[-0.14px]">
                     Question {qa.questionNumber}
                   </span>
                   <svg
@@ -379,32 +379,32 @@ export const QAHistory = memo(() => {
                     <path d="m18 15-6-6-6 6" />
                   </svg>
                 </div>
-                <span
-                  className={`text-[12px] font-semibold px-2.5 py-0.5 rounded-full border ${
+                <div
+                  className={`text-[12px] font-[600] px-2 py-3 rounded-[6px] leading-0 border ${
                     qa.scoreVariant === 'blue'
                       ? 'bg-[#EFF6FF] border-[#BFDBFE] text-[#2563EB]'
-                      : 'bg-[#FFF7ED] border-[#FED7AA] text-[#EA580C]'
+                      : 'bg-[#FFF1E2] border-[#FFCC94] text-[#F58709]'
                   }`}
                 >
                   {qa.score}
-                </span>
+                </div>
               </div>
 
               {/* Expanded Q&A and AI Analysis */}
               {isExpanded && (
                 <div className="flex flex-col gap-2.5 pt-1">
-                  <p className="text-[13px] text-[#374151] leading-relaxed">
-                    <span className="font-semibold text-[#18181B]">Q:</span>{' '}
+                  <p className="text-[13px] text-[#5C5C5C] tracking-[-0.13px] leading-relaxed font-[500]">
+                    <span className="text-[12px] font-[600] text-[#252525]">Q:</span>{' '}
                     {qa.question}
                   </p>
-                  <p className="text-[13px] text-[#374151] leading-relaxed">
-                    <span className="font-semibold text-[#18181B]">A:</span>{' '}
+                  <p className="text-[13px] text-[#5C5C5C] tracking-[-0.13px] leading-relaxed font-[500]">
+                    <span className="text-[12px] font-[600] text-[#252525]">A:</span>{' '}
                     {qa.answer}
                   </p>
 
                   {/* AI Analysis Box */}
-                  <div className="rounded-xl bg-[#FAF5FF] p-3 border-l-4 border-l-[#9333EA] flex flex-col gap-1.5 mt-1">
-                    <div className="flex items-center gap-1.5 text-[13px] font-semibold text-[#9333EA]">
+                  <div className="rounded-xl bg-[#F9F3FF] p-2.5 border-l-2 border-l-[#9333EA] flex flex-col gap-1.5">
+                    <div className="flex items-center gap-1.5 text-[13px] font-semibold text-[#A033FF] tracking-[-0.13px]">
                       <div className="w-4 h-4 rounded-full bg-[#9333EA] text-white flex items-center justify-center shrink-0">
                         <svg
                           width="10"
@@ -417,7 +417,7 @@ export const QAHistory = memo(() => {
                       </div>
                       <span>AI Analysis</span>
                     </div>
-                    <p className="text-[13px] font-medium text-[#18181B] leading-snug">
+                    <p className="text-[13px] font-[500] text-[#0B0022] leading-snug">
                       {qa.aiAnalysis}
                     </p>
                   </div>
@@ -442,15 +442,15 @@ const SessionContext = ({ onSkillClick }: SessionContextProps) => {
   return (
     <div className="w-full h-full rounded-lg border bg-[#FFFFFF] border-[#E1E4EA] overflow-hidden flex flex-col">
       {/* Session Context Header & Tabs */}
-      <div className="xl:p-4 lg:p-2 pb-0 flex flex-col gap-3 shrink-0">
+      <div className="p-3 xl:p-4 xl:pb-4 lg:pb-2 flex flex-col gap-3 shrink-0 border-b border-[#E1E4EA]">
         <p className="text-[14px] font-medium text-[#5C5C5C] tracking-[-0.14px]">Session Context</p>
 
-        <div className="bg-[#F3F4F6] rounded-lg  p-1 mb-3 flex justify-between items-center xl:gap-1.5 lg:gap-1 gap-0.5">
+        <div className="bg-[#F3F4F6] rounded-lg p-1 flex justify-between items-center gap-0.5 xl:gap-1.5">
           {tabs.map((item, idx) => (
             <button
               onClick={() => setActiveTab(item)}
-              className={`text-[#5C5C5C] text-[13px] font-medium border w-fit xl:px-2.5 lg:px-1 py-1.5 cursor-pointer transition-all
-                ${activeTab === item ? 'bg-[#FFFFFF] border-[#E1E4EA] rounded-md shadow-xs text-[#252525]' : 'border-transparent '}`}
+              className={`text-[#5C5C5C] text-[11.5px] xl:text-[13px] font-medium border flex-1 text-center px-0.5 xl:px-2 py-1.5 cursor-pointer transition-all whitespace-nowrap
+                ${activeTab === item ? 'bg-[#FFFFFF] border-[#E1E4EA] rounded-md shadow-xs text-[#252525]' : 'border-transparent'}`}
               key={idx}
             >
               {item}
